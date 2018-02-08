@@ -1,2 +1,3 @@
 # Pokemon
-Pokemon project for Intro to Software Engineering 
+
+Nothing to read here
