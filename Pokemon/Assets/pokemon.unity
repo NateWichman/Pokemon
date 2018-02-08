@@ -755,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1094341393}
   battleCamera: {fileID: 2040533085}
+  player: {fileID: 1932035485}
 --- !u!4 &129805088
 Transform:
   m_ObjectHideFlags: 0
@@ -8284,6 +8285,7 @@ MonoBehaviour:
   southSprite: {fileID: 21300040, guid: 65614421530f04c49a20fe9524f034e1, type: 3}
   westSprite: {fileID: 21300086, guid: 65614421530f04c49a20fe9524f034e1, type: 3}
   walkSpeed: 3
+  isAllowedToMove: 1
 --- !u!61 &1932035489
 BoxCollider2D:
   m_ObjectHideFlags: 0

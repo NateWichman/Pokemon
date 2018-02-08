@@ -17,6 +17,12 @@ public class BasePokemon : MonoBehaviour {
 	public float maxDef;
 	public float speed;
 	public Rarity rarity; 
+	public Stat HPStat;
+	public Stat AttackStat;
+	public Stat DefencesStat;
+
+	public bool canEvolve;
+	public PokemonEvolution evolveTo;
 
 	private int level;
 
@@ -48,8 +54,17 @@ public enum PokemonType{
 	Water,
 	Grass,
 	Ice,
-	Electra,
+	Electric,
 	Psychic,
 	Dark,
-	Dragon
+	Dragon,
+	Fighting,
+	Normal
+}
+
+//This command allows you to "edit it in the editor"
+[System.Serializable] 
+public class PokemonEvolution{
+	public BasePokemon nextEvolution;
+	public int levelUpLevel;
 }
