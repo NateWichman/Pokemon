@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+	/*
+		Testing if I can push stuff from git to my computer by seeing if this notes shows up - Nate
+	*/
 	public GameObject playerCamera;
 	public GameObject battleCamera;
 
