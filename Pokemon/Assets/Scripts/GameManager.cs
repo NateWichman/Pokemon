@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject battleCamera;
 
 	public GameObject player;
+	public GameObject northOfPlayer;
 
-	public List<BasePokemon> allPokemon = new List<BasePokemon> ();
-	public List<PokemonMoves> allMoves = new List<PokemonMoves>();
+	private Vector3 offset;
+
 
 	// Use this for initialization
 	void Start () {
@@ -23,54 +24,26 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		offset = northOfPlayer.transform.position - player.transform.position;
 	}
 
-	public void EnterBattle(Rarity rarity){
+	void LateUpdate(){
+		northOfPlayer.transform.position = player.transform.position + offset;
+	}
+		
+	public void EnterBattle(){
 		playerCamera.active = false;
 		battleCamera.active = true;
 
-		BasePokemon battlePokemon = GetRandomPokemonFromList (GetPokemonByRarity (rarity));
 		player.GetComponent<PlayerMovement>().isAllowedToMove = false;
 	}
 
-	public List<BasePokemon> GetPokemonByRarity(Rarity rarity){
-		List<BasePokemon> returnPokemon = new List<BasePokemon> ();
-		foreach (BasePokemon Pokemon in allPokemon) {
-			if (Pokemon.rarity == rarity) {
-				returnPokemon.Add (Pokemon);
-			}
-		}
-		return returnPokemon;
+	public void SolidObjectHit(){
+		player.GetComponent<PlayerMovement> ().isAllowedToMoveNorth = false;
+		print ("hit");
 	}
-
-	public BasePokemon GetRandomPokemonFromList(List<BasePokemon> pokeList){
-		BasePokemon poke = new BasePokemon();
-		int pokeIndex = Random.Range (0, pokeList.Count - 1);
-		poke = pokeList [pokeIndex];
-		return poke;
+	public void SolidObjectLeft(){
+		player.GetComponent<PlayerMovement> ().isAllowedToMoveNorth = true;
+		print ("Left");
 	}
-}
-
-[System.Serializable]
-public class PokemonMoves{
-	string Name;
-	public MoveType category;
-	public Stat moveStat;
-	public PokemonType moveType;
-	public int PP;
-	public float power;
-	public float accuracy;
-}
-
-[System.Serializable]
-public class Stat{
-	public float minimum;
-	public float maximum;
-}
-
-public enum MoveType{
-	Physical,
-	Special,
-	Status
 }

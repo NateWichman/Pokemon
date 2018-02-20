@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class LongGrass : MonoBehaviour {
 
-	//Reference enum in Regions.c, determines what type of pokemon appears
-	public BiomeList grassType;
 
-	//Creating a GameManager object from GameManager.cs
 	private GameManager gm;
 
 	// Use this for initialization
@@ -43,26 +40,26 @@ public class LongGrass : MonoBehaviour {
 			//Notice that it starts from vr and goes down to vc
 			if (p < vr * 100) {
 				if (gm != null) {
-					gm.EnterBattle (Rarity.VeryRare);
+					gm.EnterBattle ();
 				}
 			} else if (p < r * 100) {
 				if (gm != null) {
-					gm.EnterBattle (Rarity.Rare);
+					gm.EnterBattle ();
 				}
 				
 			} else if (p < sr * 100) {
 				if (gm != null) {
-					gm.EnterBattle (Rarity.SemiRare);
+					gm.EnterBattle ();
 				}
 
 			} else if (p < c * 100) {
 				if (gm != null) {
-					gm.EnterBattle (Rarity.Common);
+					gm.EnterBattle ();
 				}
 
 			} else if (p < vc * 100) {
 				if (gm != null) {
-					gm.EnterBattle (Rarity.VeryCommon);
+					gm.EnterBattle ();
 				}
 
 			}

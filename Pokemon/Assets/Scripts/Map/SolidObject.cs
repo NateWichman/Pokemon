@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGaze : MonoBehaviour {
+public class SolidObject : MonoBehaviour {
 
 	private GameManager gm;
-
 	// Use this for initialization
 	void Start () {
 		gm = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager> ();
@@ -16,9 +15,15 @@ public class EnemyGaze : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	void OnTriggerStay2D(Collider2D col){
+		//When anything goes inside of the collider "col" this code will run
 		if (col.GetComponent<PlayerMovement> ()) {
-			gm.EnterBattle();
+			gm.SolidObjectHit ();
+		}
+	}
+	void OnTriggerExit2D(Collider2D col){
+		if (col.GetComponent<PlayerMovement> ()) {
+			gm.SolidObjectLeft ();
 		}
 	}
 }

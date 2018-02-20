@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4126558543366832}
   - component: {fileID: 212450183136648462}
   - component: {fileID: 61668505706261284}
-  - component: {fileID: 114451362541075250}
+  - component: {fileID: 114223173350782722}
   m_Layer: 0
   m_Name: Long_Grass_01
   m_TagString: Untagged
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114451362541075250
+--- !u!114 &114223173350782722
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,10 +75,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199051576423106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1ff90608722114ca462ceabf2042f1, type: 3}
+  m_Script: {fileID: 11500000, guid: f0b8edb3504e3d54b95f8a74e53487dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassType: 0
 --- !u!212 &212450183136648462
 SpriteRenderer:
   m_ObjectHideFlags: 1

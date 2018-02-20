@@ -19,54 +19,59 @@ public class PlayerMovement : MonoBehaviour {
 	public float walkSpeed = 3f;
 
 	public bool isAllowedToMove = true;
+	public bool isAllowedToMoveNorth = true;
 
 	void Start(){
 		isAllowedToMove = true;
+		isAllowedToMoveNorth = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (!isMoving && isAllowedToMove) {
 			input = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
-			if (Mathf.Abs (input.x) > Mathf.Abs (input.y)) {
-				input.y = 0; //Makes it so the player does not move diagnoally
-			} 
-			else {
-				input.x = 0;
+			if ((input.y > 0) && (!isAllowedToMoveNorth)) {
+				isAllowedToMove = false;
+				print ("done1");
 			}
-			//The below if statement determins the correct enum to change the sprite
-			if (input != Vector2.zero) {
-				if (input.x < 0){
-					currentDir = Direction.West;
-				} 
-				else if (input.x > 0) {
-					currentDir = Direction.East;
-				} 
-				else if (input.y < 0) {
-					currentDir = Direction.South;
-				} 
-				else if (input.y > 0) {
-					currentDir = Direction.North;
+			if (!isMoving && isAllowedToMove) {
+				if (Mathf.Abs (input.x) > Mathf.Abs (input.y)) {
+					input.y = 0; //Makes it so the player does not move diagnoally
+				} else {
+					input.x = 0;
 				}
+				//The below if statement determins the correct enum to change the sprite
+				if (input != Vector2.zero) {
+					if (input.x < 0) {
+						currentDir = Direction.West;
+					} else if (input.x > 0) {
+						currentDir = Direction.East;
+					} else if (input.y < 0) {
+						currentDir = Direction.South;
+					} else if (input.y > 0) {
+						currentDir = Direction.North;
+					}
 
-				//Changes sprite based on currentDir value found above
-				switch (currentDir) {
-				case Direction.North:
-					gameObject.GetComponent<SpriteRenderer> ().sprite = northSprite;
-					break;
-				case Direction.East:
-					gameObject.GetComponent<SpriteRenderer> ().sprite = eastSprite;
-					break;
-				case Direction.South:
-					gameObject.GetComponent<SpriteRenderer> ().sprite = southSprite;
-					break;
-				case Direction.West:
-					gameObject.GetComponent<SpriteRenderer> ().sprite = westSprite;
-					break;
+					//Changes sprite based on currentDir value found above
+					switch (currentDir) {
+					case Direction.North:
+						gameObject.GetComponent<SpriteRenderer> ().sprite = northSprite;
+						break;
+					case Direction.East:
+						gameObject.GetComponent<SpriteRenderer> ().sprite = eastSprite;
+						break;
+					case Direction.South:
+						gameObject.GetComponent<SpriteRenderer> ().sprite = southSprite;
+						break;
+					case Direction.West:
+						gameObject.GetComponent<SpriteRenderer> ().sprite = westSprite;
+						break;
+					}
+					StartCoroutine (Move (transform));
 				}
-				StartCoroutine (Move (transform));
 			}
 		}
+		isAllowedToMove = true;
 	}
 
 	public IEnumerator Move(Transform entity){
