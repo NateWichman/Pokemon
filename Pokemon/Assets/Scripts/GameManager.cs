@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	*/
 	public GameObject playerCamera;
 	public GameObject battleCamera;
+	public GameObject libraryCamera1;
 
 	public GameObject player;
 	public GameObject northOfPlayer;
@@ -21,26 +22,36 @@ public class GameManager : MonoBehaviour {
 	private Vector3 offsetS;
 	private Vector3 offsetW;
 
+	private Vector3 offsetCamera1;
+
 
 	// Use this for initialization
 	void Start () {
 		playerCamera.SetActive (true);
 		battleCamera.SetActive (false);
+		libraryCamera1.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		//making invisible sprites that detect collisions follow main player
 		offsetN = northOfPlayer.transform.position - player.transform.position;
 		offsetE = eastOfPlayer.transform.position - player.transform.position;
 		offsetS = southOfPlayer.transform.position - player.transform.position;
 		offsetW = westOfPlayer.transform.position - player.transform.position;
+		//Setting the offset of Camera1 to the correct postition
+		offsetCamera1 = playerCamera.transform.position - player.transform.position;
 	}
 
 	void LateUpdate(){
+		//Making invisible sprites that detect collisions follow main player
 		northOfPlayer.transform.position = player.transform.position + offsetN;
 		eastOfPlayer.transform.position = player.transform.position + offsetE;
 		southOfPlayer.transform.position = player.transform.position + offsetS;
 		westOfPlayer.transform.position = player.transform.position + offsetW;
+		//Making the camera1 follow player.
+		playerCamera.transform.position = player.transform.position + offsetCamera1;
 	}
 		
 	public void EnterBattle(){

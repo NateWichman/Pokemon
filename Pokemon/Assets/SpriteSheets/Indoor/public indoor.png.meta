@@ -1,0 +1,942 @@
+fileFormatVersion: 2
+guid: 42d098c6d7547ad42b6005781034a413
+timeCreated: 1519168787
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: floor01
+    21300002: public indoor_1
+    21300004: public indoor_2
+    21300006: Bookshelf01
+    21300008: public indoor_4
+    21300010: public indoor_5
+    21300012: public indoor_6
+    21300014: public indoor_7
+    21300016: public indoor_8
+    21300018: public indoor_9
+    21300020: public indoor_10
+    21300022: public indoor_11
+    21300024: public indoor_12
+    21300026: public indoor_13
+    21300028: public indoor_14
+    21300030: public indoor_15
+    21300032: public indoor_16
+    21300034: public indoor_17
+    21300036: public indoor_18
+    21300038: public indoor_19
+    21300040: public indoor_20
+    21300042: public indoor_21
+    21300044: public indoor_22
+    21300046: public indoor_23
+    21300048: public indoor_24
+    21300050: public indoor_25
+    21300052: public indoor_26
+    21300054: public indoor_27
+    21300056: public indoor_28
+    21300058: public indoor_29
+    21300060: public indoor_30
+    21300062: public indoor_31
+    21300064: public indoor_32
+    21300066: public indoor_33
+    21300068: public indoor_34
+    21300070: public indoor_35
+    21300072: public indoor_36
+    21300074: public indoor_37
+    21300076: public indoor_38
+    21300078: public indoor_39
+    21300080: public indoor_40
+    21300082: public indoor_41
+    21300084: public indoor_42
+    21300086: public indoor_43
+    21300088: public indoor_44
+    21300090: public indoor_45
+    21300092: public indoor_46
+    21300094: public indoor_47
+    21300096: public indoor_48
+    21300098: public indoor_49
+    21300100: public indoor_50
+    21300102: public indoor_51
+    21300104: public indoor_52
+    21300106: floor02
+    21300108: floor03
+    21300110: floor04
+    21300112: floor06
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: floor01
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 864
+        width: 15
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 580
+        width: 195
+        height: 300
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_2
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 804
+        width: 120
+        height: 75
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bookshelf01
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 745
+        width: 30
+        height: 29
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_4
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 805
+        width: 61
+        height: 75
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_5
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 834
+        width: 25
+        height: 40
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_6
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 855
+        width: 45
+        height: 25
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_7
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 852
+        width: 9
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_8
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 804
+        width: 60
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_9
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 819
+        width: 46
+        height: 31
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 759
+        width: 61
+        height: 38
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_11
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 744
+        width: 39
+        height: 51
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_12
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 783
+        width: 135
+        height: 21
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 685
+        width: 39
+        height: 64
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_14
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 700
+        width: 61
+        height: 35
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_15
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 707
+        width: 12
+        height: 21
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 700
+        width: 120
+        height: 57
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_17
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 718
+        width: 40
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_18
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 716
+        width: 31
+        height: 39
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_19
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 671
+        width: 90
+        height: 104
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_20
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 656
+        width: 45
+        height: 117
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_21
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 595
+        width: 120
+        height: 99
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_22
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 656
+        width: 12
+        height: 21
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_23
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 621
+        width: 195
+        height: 87
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_24
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 670
+        width: 19
+        height: 46
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 670
+        width: 19
+        height: 46
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_26
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 656
+        width: 44
+        height: 44
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_27
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 625
+        width: 30
+        height: 39
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_28
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 641
+        width: 14
+        height: 29
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_29
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 630
+        width: 12
+        height: 21
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_30
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 642
+        width: 14
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_31
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 633
+        width: 25
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_32
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 628
+        width: 16
+        height: 25
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_33
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 596
+        width: 30
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_34
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 625
+        width: 12
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_35
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 536
+        width: 194
+        height: 82
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_36
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 564
+        width: 75
+        height: 57
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_37
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 551
+        width: 45
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_38
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 541
+        width: 20
+        height: 18
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_39
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 539
+        width: 35
+        height: 19
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_40
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 507
+        width: 60
+        height: 42
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_41
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 523
+        width: 13
+        height: 11
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_42
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 478
+        width: 48
+        height: 55
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_43
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 523
+        width: 12
+        height: 11
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_44
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 507
+        width: 12
+        height: 25
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_45
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 494
+        width: 14
+        height: 11
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_46
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 493
+        width: 14
+        height: 12
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_47
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 493
+        width: 44
+        height: 13
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_48
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 476
+        width: 14
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_49
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 461
+        width: 28
+        height: 30
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_50
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 477
+        width: 29
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_51
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 435
+        width: 44
+        height: 37
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: public indoor_52
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 447
+        width: 29
+        height: 29
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: floor02
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 864
+        width: 15
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: floor03
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 864
+        width: 15
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: floor04
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 864
+        width: 15
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: floor06
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 849
+        width: 15
+        height: 15
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
