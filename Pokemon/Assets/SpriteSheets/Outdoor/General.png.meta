@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 24a655cd7103a6047879317c5738dead
-timeCreated: 1518543619
+timeCreated: 1520438771
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -18,14 +18,14 @@ TextureImporter:
     21300022: DirtTrack2
     21300024: General_12
     21300026: General_13
-    21300028: General_14
-    21300030: General_15
+    21300028: water1
+    21300030: water2
     21300032: General_16
     21300034: General_17
     21300036: General_18
     21300038: General_19
-    21300040: General_20
-    21300042: General_21
+    21300040: sidewalk1
+    21300042: sidewalk2
     21300044: tile1
     21300046: tile2
     21300048: General_24
@@ -47,14 +47,14 @@ TextureImporter:
     21300080: DirtTrack4
     21300082: General_41
     21300084: General_42
-    21300086: General_43
-    21300088: General_44
+    21300086: water3
+    21300088: water4
     21300090: General_45
     21300092: General_46
     21300094: General_47
     21300096: General_48
-    21300098: General_49
-    21300100: General_50
+    21300098: sidewalk3
+    21300100: sidewalk4
     21300102: tile3
     21300104: tile4
     21300106: General_53
@@ -90,18 +90,18 @@ TextureImporter:
     21300166: General_83
     21300168: General_84
     21300170: General_85
-    21300172: General_86
-    21300174: General_87
-    21300176: General_88
+    21300172: water5
+    21300174: water6
+    21300176: water7
     21300178: General_89
     21300180: General_90
     21300182: General_91
     21300184: General_92
     21300186: General_93
     21300188: General_94
-    21300190: General_95
-    21300192: General_96
-    21300194: General_97
+    21300190: sidewalk5
+    21300192: sidewalk6
+    21300194: sidewalk7
     21300196: tile5
     21300198: tile6
     21300200: tile7
@@ -112,7 +112,7 @@ TextureImporter:
     21300210: General_105
     21300212: General_106
     21300214: General_107
-    21300216: General_108
+    21300216: newsstand
     21300218: General_109
     21300220: General_110
     21300222: General_111
@@ -140,18 +140,18 @@ TextureImporter:
     21300266: General_133
     21300268: General_134
     21300270: General_135
-    21300272: General_136
-    21300274: General_137
-    21300276: General_138
+    21300272: water8
+    21300274: water9
+    21300276: water10
     21300278: General_139
     21300280: General_140
     21300282: General_141
     21300284: General_142
     21300286: General_143
     21300288: General_144
-    21300290: General_145
-    21300292: General_146
-    21300294: General_147
+    21300290: sidewalk8
+    21300292: sidewalk9
+    21300294: sidewalk10
     21300296: tile8
     21300298: General_149
     21300300: General_150
@@ -190,18 +190,18 @@ TextureImporter:
     21300366: General_183
     21300368: General_184
     21300370: General_185
-    21300372: General_186
-    21300374: General_187
-    21300376: General_188
+    21300372: water12
+    21300374: water13
+    21300376: water15
     21300378: General_189
     21300380: General_190
     21300382: General_191
     21300384: General_192
     21300386: General_193
     21300388: General_194
-    21300390: General_195
-    21300392: General_196
-    21300394: General_197
+    21300390: sidewalk11
+    21300392: sidewalk12
+    21300394: sidewalk13
     21300396: General_198
     21300398: General_199
     21300400: General_200
@@ -332,7 +332,7 @@ TextureImporter:
     21300650: General_325
     21300652: General_326
     21300654: General_327
-    21300656: General_328
+    21300656: hill9
     21300658: General_329
     21300660: General_330
     21300662: General_331
@@ -393,7 +393,7 @@ TextureImporter:
     21300772: General_386
     21300774: General_387
     21300776: General_388
-    21300778: General_389
+    21300778: bench3
     21300780: General_390
     21300782: tree1
     21300784: General_392
@@ -529,7 +529,7 @@ TextureImporter:
     21301044: General_522
     21301046: General_523
     21301048: General_524
-    21301050: General_525
+    21301050: bridge
     21301052: General_526
     21301054: General_527
     21301056: General_528
@@ -552,18 +552,18 @@ TextureImporter:
     21301090: General_545
     21301092: General_546
     21301094: General_547
-    21301096: General_548
+    21301096: bush1
     21301098: General_549
     21301100: General_550
     21301102: General_551
     21301104: General_552
-    21301106: General_553
+    21301106: potplant1
     21301108: General_554
     21301110: General_555
     21301112: General_556
     21301114: General_557
     21301116: General_558
-    21301118: General_559
+    21301118: log
     21301120: General_560
     21301122: General_561
     21301124: General_562
@@ -578,21 +578,21 @@ TextureImporter:
     21301142: General_571
     21301144: General_572
     21301146: General_573
-    21301148: General_574
+    21301148: bushl1
     21301150: General_575
     21301152: General_576
     21301154: General_577
     21301156: General_578
     21301158: General_579
     21301160: potplant
-    21301162: General_581
+    21301162: potplant2
     21301164: General_582
     21301166: General_583
     21301168: General_584
     21301170: General_585
     21301172: General_586
     21301174: General_587
-    21301176: General_588
+    21301176: box
     21301178: General_589
     21301180: General_590
     21301182: General_591
@@ -607,8 +607,8 @@ TextureImporter:
     21301200: General_600
     21301202: General_601
     21301204: General_602
-    21301206: General_603
-    21301208: General_604
+    21301206: bushl3
+    21301208: bushl2
     21301210: General_605
     21301212: General_606
     21301214: General_607
@@ -633,8 +633,8 @@ TextureImporter:
     21301252: General_626
     21301254: General_627
     21301256: General_628
-    21301258: General_629
-    21301260: General_630
+    21301258: bushl5
+    21301260: bushl4
     21301262: flower1
     21301264: General_632
     21301266: General_633
@@ -646,15 +646,15 @@ TextureImporter:
     21301278: General_639
     21301280: General_640
     21301282: General_641
-    21301284: General_642
-    21301286: General_643
+    21301284: bushl7
+    21301286: bushl6
     21301288: flower2
     21301290: General_645
     21301292: General_646
     21301294: General_647
     21301296: General_648
     21301298: General_649
-    21301300: General_650
+    21301300: bridgeside
     21301302: General_651
     21301304: General_652
     21301306: General_653
@@ -663,9 +663,9 @@ TextureImporter:
     21301312: General_656
     21301314: General_657
     21301316: General_658
-    21301318: General_659
-    21301320: General_660
-    21301322: General_661
+    21301318: bushl10
+    21301320: bushl9
+    21301322: bushl8
     21301324: flower3
     21301326: General_663
     21301328: General_664
@@ -684,18 +684,18 @@ TextureImporter:
     21301354: fence4
     21301356: General_678
     21301358: General_679
-    21301360: General_680
+    21301360: hill3
     21301362: General_681
-    21301364: General_682
+    21301364: hill4
     21301366: fence7
     21301368: fence6
     21301370: fence5
     21301372: General_686
     21301374: General_687
     21301376: General_688
-    21301378: General_689
+    21301378: hill1
     21301380: General_690
-    21301382: General_691
+    21301382: hill2
     21301384: General_692
     21301386: General_693
     21301388: General_694
@@ -946,7 +946,7 @@ TextureImporter:
     21301878: General_939
     21301880: General_940
     21301882: General_941
-    21301884: General_942
+    21301884: clock
     21301886: General_943
     21301888: General_944
     21301890: General_945
@@ -1551,7 +1551,7 @@ TextureImporter:
     21303088: House1_31
     21303090: House1_32
     21303092: House1_33
-    21303094: General_1551
+    21303094: bus
     21303096: General_1552
     21303098: General_1553
     21303100: General_1554
@@ -1652,7 +1652,7 @@ TextureImporter:
     21303290: General_1649
     21303292: General_1650
     21303294: General_1651
-    21303296: General_1652
+    21303296: car1
     21303298: General_1653
     21303300: General_1654
     21303302: General_1655
@@ -1668,7 +1668,7 @@ TextureImporter:
     21303322: General_1665
     21303324: General_1666
     21303326: General_1667
-    21303328: General_1668
+    21303328: car2
     21303330: General_1669
     21303332: General_1670
     21303334: General_1671
@@ -1715,17 +1715,18 @@ TextureImporter:
     21303416: General_1712
     21303418: General_1713
     21303420: General_1714
-    21303422: General_1715
+    21303422: statue1
     21303424: General_1716
     21303426: General_1717
-    21303428: General_1718
+    21303428: statue2
     21303430: General_1719
     21303432: General_1720
-    21303434: General_1721
+    21303434: statue3
     21303436: General_1722
     21303438: General_1723
     21303440: General_1724
     21303442: General_1725
+    21303444: General_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -1998,7 +1999,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_14
+      name: water1
       rect:
         serializedVersion: 2
         x: 480
@@ -2012,7 +2013,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_15
+      name: water2
       rect:
         serializedVersion: 2
         x: 496
@@ -2082,7 +2083,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_20
+      name: sidewalk1
       rect:
         serializedVersion: 2
         x: 624
@@ -2096,7 +2097,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_21
+      name: sidewalk2
       rect:
         serializedVersion: 2
         x: 640
@@ -2404,7 +2405,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_43
+      name: water3
       rect:
         serializedVersion: 2
         x: 480
@@ -2418,7 +2419,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_44
+      name: water4
       rect:
         serializedVersion: 2
         x: 496
@@ -2488,7 +2489,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_49
+      name: sidewalk3
       rect:
         serializedVersion: 2
         x: 624
@@ -2502,7 +2503,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_50
+      name: sidewalk4
       rect:
         serializedVersion: 2
         x: 640
@@ -3006,7 +3007,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_86
+      name: water5
       rect:
         serializedVersion: 2
         x: 464
@@ -3020,7 +3021,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_87
+      name: water6
       rect:
         serializedVersion: 2
         x: 480
@@ -3034,7 +3035,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_88
+      name: water7
       rect:
         serializedVersion: 2
         x: 496
@@ -3132,7 +3133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_95
+      name: sidewalk5
       rect:
         serializedVersion: 2
         x: 608
@@ -3146,7 +3147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_96
+      name: sidewalk6
       rect:
         serializedVersion: 2
         x: 624
@@ -3160,7 +3161,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_97
+      name: sidewalk7
       rect:
         serializedVersion: 2
         x: 640
@@ -3314,13 +3315,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_108
+      name: newsstand
       rect:
         serializedVersion: 2
         x: 16
-        y: 800
+        y: 784
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3706,7 +3707,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_136
+      name: water8
       rect:
         serializedVersion: 2
         x: 464
@@ -3720,7 +3721,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_137
+      name: water9
       rect:
         serializedVersion: 2
         x: 480
@@ -3734,7 +3735,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_138
+      name: water10
       rect:
         serializedVersion: 2
         x: 496
@@ -3832,7 +3833,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_145
+      name: sidewalk8
       rect:
         serializedVersion: 2
         x: 608
@@ -3846,7 +3847,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_146
+      name: sidewalk9
       rect:
         serializedVersion: 2
         x: 624
@@ -3860,7 +3861,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_147
+      name: sidewalk10
       rect:
         serializedVersion: 2
         x: 640
@@ -4406,7 +4407,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_186
+      name: water12
       rect:
         serializedVersion: 2
         x: 464
@@ -4420,7 +4421,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_187
+      name: water13
       rect:
         serializedVersion: 2
         x: 480
@@ -4434,7 +4435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_188
+      name: water15
       rect:
         serializedVersion: 2
         x: 496
@@ -4532,7 +4533,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_195
+      name: sidewalk11
       rect:
         serializedVersion: 2
         x: 608
@@ -4546,7 +4547,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_196
+      name: sidewalk12
       rect:
         serializedVersion: 2
         x: 624
@@ -4560,7 +4561,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_197
+      name: sidewalk13
       rect:
         serializedVersion: 2
         x: 640
@@ -6394,7 +6395,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_328
+      name: hill9
       rect:
         serializedVersion: 2
         x: 368
@@ -6761,13 +6762,13 @@ TextureImporter:
       name: stairs
       rect:
         serializedVersion: 2
-        x: 32
+        x: 40
         y: 720
-        width: 48
-        height: 17
+        width: 31
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -7248,13 +7249,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_389
+      name: bench3
       rect:
         serializedVersion: 2
         x: 784
-        y: 720
-        width: 16
-        height: 16
+        y: 702
+        width: 18
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9152,13 +9153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_525
+      name: bridge
       rect:
         serializedVersion: 2
         x: 128
-        y: 656
-        width: 16
-        height: 16
+        y: 625
+        width: 79
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9474,7 +9475,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_548
+      name: bush1
       rect:
         serializedVersion: 2
         x: 32
@@ -9544,7 +9545,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_553
+      name: potplant1
       rect:
         serializedVersion: 2
         x: 112
@@ -9628,12 +9629,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_559
+      name: log
       rect:
         serializedVersion: 2
         x: 208
         y: 640
-        width: 16
+        width: 33
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -9838,7 +9839,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_574
+      name: bushl1
       rect:
         serializedVersion: 2
         x: 480
@@ -9936,7 +9937,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_581
+      name: potplant2
       rect:
         serializedVersion: 2
         x: 96
@@ -10034,7 +10035,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_588
+      name: box
       rect:
         serializedVersion: 2
         x: 208
@@ -10244,7 +10245,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_603
+      name: bushl3
       rect:
         serializedVersion: 2
         x: 464
@@ -10258,7 +10259,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_604
+      name: bushl2
       rect:
         serializedVersion: 2
         x: 480
@@ -10608,7 +10609,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_629
+      name: bushl5
       rect:
         serializedVersion: 2
         x: 464
@@ -10622,7 +10623,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_630
+      name: bushl4
       rect:
         serializedVersion: 2
         x: 480
@@ -10790,7 +10791,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_642
+      name: bushl7
       rect:
         serializedVersion: 2
         x: 464
@@ -10804,7 +10805,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_643
+      name: bushl6
       rect:
         serializedVersion: 2
         x: 480
@@ -10902,13 +10903,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_650
+      name: bridgeside
       rect:
         serializedVersion: 2
         x: 96
-        y: 576
-        width: 16
-        height: 16
+        y: 511
+        width: 10
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11028,7 +11029,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_659
+      name: bushl10
       rect:
         serializedVersion: 2
         x: 448
@@ -11042,7 +11043,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_660
+      name: bushl9
       rect:
         serializedVersion: 2
         x: 464
@@ -11056,7 +11057,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_661
+      name: bushl8
       rect:
         serializedVersion: 2
         x: 480
@@ -11322,7 +11323,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_680
+      name: hill3
       rect:
         serializedVersion: 2
         x: 0
@@ -11350,7 +11351,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_682
+      name: hill4
       rect:
         serializedVersion: 2
         x: 32
@@ -11448,7 +11449,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_689
+      name: hill1
       rect:
         serializedVersion: 2
         x: 0
@@ -11476,7 +11477,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_691
+      name: hill2
       rect:
         serializedVersion: 2
         x: 32
@@ -14990,13 +14991,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_942
+      name: clock
       rect:
         serializedVersion: 2
-        x: 656
-        y: 384
-        width: 16
-        height: 16
+        x: 655
+        y: 385
+        width: 51
+        height: 129
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -23460,13 +23461,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1551
+      name: bus
       rect:
         serializedVersion: 2
         x: 320
-        y: 64
-        width: 16
-        height: 16
+        y: 48
+        width: 161
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -24874,13 +24875,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1652
+      name: car1
       rect:
         serializedVersion: 2
         x: 320
-        y: 16
-        width: 16
-        height: 16
+        y: 0
+        width: 54
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25098,13 +25099,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1668
+      name: car2
       rect:
         serializedVersion: 2
-        x: 576
-        y: 16
-        width: 16
-        height: 16
+        x: 540
+        y: 0
+        width: 52
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25756,13 +25757,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1715
+      name: statue1
       rect:
         serializedVersion: 2
         x: 624
         y: 0
-        width: 16
-        height: 16
+        width: 57
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25798,13 +25799,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1718
+      name: statue2
       rect:
         serializedVersion: 2
-        x: 688
+        x: 681
         y: 0
-        width: 16
-        height: 16
+        width: 59
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25840,13 +25841,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: General_1721
+      name: statue3
       rect:
         serializedVersion: 2
         x: 736
         y: 0
-        width: 16
-        height: 16
+        width: 72
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -25903,6 +25904,20 @@ TextureImporter:
         y: 0
         width: 16
         height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: General_6
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 322
+        width: 9
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
