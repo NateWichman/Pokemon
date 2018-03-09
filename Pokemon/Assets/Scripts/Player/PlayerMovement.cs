@@ -120,8 +120,8 @@ public class PlayerMovement : MonoBehaviour {
 					StartCoroutine (Move (transform));
 				}
 			}
+			isAllowedToMove = true;
 		}
-		isAllowedToMove = true;
 	}
 
 	public IEnumerator Move(Transform entity){
