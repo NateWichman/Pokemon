@@ -20,6 +20,7 @@ public class SolidObject : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
+        print("HIIITTTTT");
         //When anything goes inside of the collider "col" this code will run
         if (col.GetComponent<northOfPlayer>())
         {
