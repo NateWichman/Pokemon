@@ -1,76 +1,99 @@
 ﻿using System.Collections;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
-	/*
+    /*
 		Testing if I can push stuff from git to my computer by seeing if this notes shows up - Nate
 	*/
-	public GameObject playerCamera;
-	public GameObject battleCamera;
+    public GameObject playerCamera;
+    public GameObject battleCamera;
+    public GameObject libraryCamera1;
 
-	public GameObject player;
+    public GameObject player;
+    public GameObject northOfPlayer;
+    public GameObject eastOfPlayer;
+    public GameObject southOfPlayer;
+    public GameObject westOfPlayer;
 
-	public List<BasePokemon> allPokemon = new List<BasePokemon> ();
-	public List<PokemonMoves> allMoves = new List<PokemonMoves>();
+    private Vector3 offsetN;
+    private Vector3 offsetE;
+    private Vector3 offsetS;
+    private Vector3 offsetW;
 
-	// Use this for initialization
-	void Start () {
-		playerCamera.SetActive (true);
-		battleCamera.SetActive (false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private Vector3 offsetCamera1;
 
-	public void EnterBattle(Rarity rarity){
-		playerCamera.active = false;
-		battleCamera.active = true;
 
-		BasePokemon battlePokemon = GetRandomPokemonFromList (GetPokemonByRarity (rarity));
-		player.GetComponent<PlayerMovement>().isAllowedToMove = false;
-	}
+    // Use this for initialization
+    void Start()
+    {
+        playerCamera.SetActive(true);
+        battleCamera.SetActive(false);
+        libraryCamera1.SetActive(false);
+    }
 
-	public List<BasePokemon> GetPokemonByRarity(Rarity rarity){
-		List<BasePokemon> returnPokemon = new List<BasePokemon> ();
-		foreach (BasePokemon Pokemon in allPokemon) {
-			if (Pokemon.rarity == rarity) {
-				returnPokemon.Add (Pokemon);
-			}
-		}
-		return returnPokemon;
-	}
+    // Update is called once per frame
+    void Update()
+    {
 
-	public BasePokemon GetRandomPokemonFromList(List<BasePokemon> pokeList){
-		BasePokemon poke = new BasePokemon();
-		int pokeIndex = Random.Range (0, pokeList.Count - 1);
-		poke = pokeList [pokeIndex];
-		return poke;
-	}
-}
+        //making invisible sprites that detect collisions follow main player
+        offsetN = northOfPlayer.transform.position - player.transform.position;
+        offsetE = eastOfPlayer.transform.position - player.transform.position;
+        offsetS = southOfPlayer.transform.position - player.transform.position;
+        offsetW = westOfPlayer.transform.position - player.transform.position;
+        //Setting the offset of Camera1 to the correct postition
+        offsetCamera1 = playerCamera.transform.position - player.transform.position;
+    }
 
-[System.Serializable]
-public class PokemonMoves{
-	string Name;
-	public MoveType category;
-	public Stat moveStat;
-	public PokemonType moveType;
-	public int PP;
-	public float power;
-	public float accuracy;
-}
+    void LateUpdate()
+    {
+        //Making invisible sprites that detect collisions follow main player
+        northOfPlayer.transform.position = player.transform.position + offsetN;
+        eastOfPlayer.transform.position = player.transform.position + offsetE;
+        southOfPlayer.transform.position = player.transform.position + offsetS;
+        westOfPlayer.transform.position = player.transform.position + offsetW;
+        //Making the camera1 follow player.
+        playerCamera.transform.position = player.transform.position + offsetCamera1;
+    }
 
-[System.Serializable]
-public class Stat{
-	public float minimum;
-	public float maximum;
-}
+    public void EnterBattle()
+    {
+        playerCamera.active = false;
+        battleCamera.active = true;
 
-public enum MoveType{
-	Physical,
-	Special,
-	Status
+        player.GetComponent<PlayerMovement>().isAllowedToMove = false;
+    }
+
+    public void SolidObjectHit(Direction dir)
+    {
+        switch (dir)
+        {
+            case Direction.North:
+                player.GetComponent<PlayerMovement>().canMoveNorth = false;
+                print("hit North");
+                break;
+            case Direction.East:
+                player.GetComponent<PlayerMovement>().canMoveEast = false;
+                print("hit East");
+                break;
+            case Direction.South:
+                player.GetComponent<PlayerMovement>().canMoveSouth = false;
+                print("hit South");
+                break;
+            case Direction.West:
+                player.GetComponent<PlayerMovement>().canMoveWest = false;
+                print("hit West");
+                break;
+        }
+    }
+    public void SolidObjectLeft()
+    {
+        player.GetComponent<PlayerMovement>().canMoveNorth = true;
+        player.GetComponent<PlayerMovement>().canMoveWest = true;
+        player.GetComponent<PlayerMovement>().canMoveSouth = true;
+        player.GetComponent<PlayerMovement>().canMoveEast = true;
+        print("Left");
+    }
 }
