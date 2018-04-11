@@ -25,13 +25,22 @@ public class GameManager : MonoBehaviour
 
     private Vector3 offsetCamera1;
 
+    public GameObject enemy;
+
+
 
     // Use this for initialization
     void Start()
     {
         playerCamera.SetActive(true);
         battleCamera.SetActive(false);
-        libraryCamera1.SetActive(false);
+        libraryCamera1.SetActive(false);/*
+        playerPerson = new Person("Player 1", 0, 0, 100);
+        takeNotes = new Ability("Take Notes", 5, 50);
+        playerPerson.addAbility(takeNotes);
+        unanouncedQuestion = new Ability("Unnanounced Question", 1, 25);
+        enemy = new Person("Professor Wordy Mouth", 5, 5, 50);
+        enemy.addAbility(unanouncedQuestion);  */
     }
 
     // Update is called once per frame
@@ -63,9 +72,31 @@ public class GameManager : MonoBehaviour
         playerCamera.active = false;
         battleCamera.active = true;
 
+
         player.GetComponent<PlayerMovement>().isAllowedToMove = false;
     }
+    
+    public void Fight()
+    {
+        player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), 1);
+        print("yolo");
+        print("Player Stats: Health: " + player.GetComponent<Person>().health);
+        print("Enemy Stats: Health: " + enemy.GetComponent<Person>().health); 
+    }
 
+    public void Defend()
+    {
+      
+    }
+    /* Exits the battle by allowing the player to move again and setting the camera to 
+     * the correct camera that the player was last at. This camera is taken as the parameter
+     * to the method.
+     * */
+    public void ExitBattle(GameObject Camera)
+    {
+        battleCamera.active = false;
+        Camera.active = true;
+    }
     public void SolidObjectHit(Direction dir)
     {
         switch (dir)
