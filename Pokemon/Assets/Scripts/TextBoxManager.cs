@@ -11,10 +11,12 @@ public class TextBoxManager : MonoBehaviour {
     public Text theText;
     public TextAsset textFile;
     public string[] textLines;
-    public int currentLine;
+    public int currentLine = 0;
     public int endAtLine;
     public bool printingText = false;
     public char[] tempString;
+
+    public bool fileDoneReading = false;
 
     //add player object and disable movement.
     // Use this for initialization
@@ -32,48 +34,58 @@ public class TextBoxManager : MonoBehaviour {
     void Update()
     {
         //needs to be modifying for NPC interaction
-        if (Input.GetKeyDown(KeyCode.Space) && currentLine != endAtLine)
+        if (Input.GetKeyDown(KeyCode.Space) && !printingText)
         {
-            theText.text = "";
-            parseString();
+            if (currentLine >= endAtLine)
+            {
+                fileDoneReading = true;
+            }
+            else
+            {
+                StartCoroutine(Wait());
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Escape) && !fileDoneReading)
+        {
+            fileDoneReading = true;
         }
 
     }
-
-    void parseString()
+    IEnumerator Wait()
     {
         printingText = true;
-        int currentLine = 0;       
-        tempString = textLines[currentLine].ToCharArray();
-        for (int i = 0; i < textLines[currentLine].Length; i++)
+        theText.text = textLines[currentLine][0].ToString();
+        for (int i = 1; i < 100; i++)
         {
-        theText.text += charToString(tempString[i]);
-        StartCoroutine(MyMethod());
+            if (i < textLines[currentLine].Length)
+            {
+                yield return new WaitForSecondsRealtime(.05f);
+                theText.text += textLines[currentLine][i].ToString();
+                if (textLines[currentLine][i] == '\n')
+                {
+                    break;
+                }
+            }
         }
         theText.text += "\n";
-        tempString = textLines[currentLine+1].ToCharArray();
-        for (int i = 0; i < textLines[currentLine].Length; i++)
+        currentLine++;
+        theText.text += textLines[currentLine][0].ToString();
+        for (int i = 1; i < 100; i++)
         {
-            theText.text += charToString(tempString[i]);
-            StartCoroutine(MyMethod());
+            if (i < textLines[currentLine].Length)
+            {
+                yield return new WaitForSecondsRealtime(.05f);
+                theText.text += textLines[currentLine][i].ToString();
+                if (textLines[currentLine][i] == '\n')
+                {
+                    break;
+                }
+            }
         }
-        if (currentLine < textLines.Length)
-        {
-            currentLine += 2;
-        }
-        endAtLine = textLines.Length;
-        //theText.text = textLines[currentLine];
-        //currentLine += 1;
+        currentLine++;
+
+        yield return new WaitForSecondsRealtime(.05f);
         printingText = false;
-        Array.Clear(tempString, 0, tempString.Length);
     }
-    static string charToString(char value)
-    {
-        return new string(value, 1);
-    }
-    IEnumerator MyMethod()
-    {
-        //parse text slowly
-        yield return new WaitForSecondsRealtime(.1f);
-    }
+
 }

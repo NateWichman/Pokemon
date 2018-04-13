@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,11 +30,25 @@ public class GameManager : MonoBehaviour
     private Vector3 offsetE;
     private Vector3 offsetS;
     private Vector3 offsetW;
+
+    public GameObject introTextReader;
     
 
     private Vector3 offsetCamera1;
 
     public GameObject enemy;
+
+    public Text battleText;
+    public Text abilityOneText;
+    public Text abilityTwoText;
+    public Text abilityThreeText;
+    public Text abilityFourText;
+    public Text enemyHealthText;
+    public Text playerHealthText;
+    int current_Ability_Number;
+    public GameObject BattleEnemySprite;
+    public GameObject BattlePlayerSprite;
+ 
     
 
 
@@ -44,21 +59,21 @@ public class GameManager : MonoBehaviour
         introCamera.SetActive(false);
         playerCamera.SetActive(false);
         battleCamera.SetActive(false);
-        libraryCamera1.SetActive(false);/*
-        playerPerson = new Person("Player 1", 0, 0, 100);
-        takeNotes = new Ability("Take Notes", 5, 50);
-        playerPerson.addAbility(takeNotes);
-        unanouncedQuestion = new Ability("Unnanounced Question", 1, 25);
-        enemy = new Person("Professor Wordy Mouth", 5, 5, 50);
-        enemy.addAbility(unanouncedQuestion);  */
+        libraryCamera1.SetActive(false);
         player.GetComponent<PlayerMovement>().isAllowedToMove = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SwitchToIntro();
-        SwitchToPlayer();
+        if (!titleDone)
+        {
+            SwitchToIntro();
+        }
+        if (!introDone)
+        {
+            SwitchToPlayer();
+        }
         //making invisible sprites that detect collisions follow main player
         offsetN = northOfPlayer.transform.position - player.transform.position;
         offsetE = eastOfPlayer.transform.position - player.transform.position;
@@ -89,15 +104,24 @@ public class GameManager : MonoBehaviour
             introCamera.SetActive(true);
         }
     }
+
     void SwitchToPlayer()
     {
         if (titleDone == true && introDone == false)
         {
+            /*
             if(Input.GetKeyDown(KeyCode.Space))
             {
                spaceCounter++;
             }
             if (spaceCounter == endingIntroLine)
+            {
+                introDone = true;
+                introCamera.SetActive(false);
+                playerCamera.SetActive(true);
+                player.GetComponent<PlayerMovement>().isAllowedToMove = true;
+            } */
+            if (introTextReader.GetComponent<TextBoxManager>().fileDoneReading)
             {
                 introDone = true;
                 introCamera.SetActive(false);
@@ -111,22 +135,94 @@ public class GameManager : MonoBehaviour
         playerCamera.active = false;
         battleCamera.active = true;
 
+        BattleEnemySprite.GetComponent<SpriteRenderer>().sprite = enemy.GetComponent<Person>().BattleSprite;
 
         player.GetComponent<PlayerMovement>().isAllowedToMove = false;
+        abilityOneText.text = player.GetComponent<Ability>().Name;
+
+        enemyHealthText.text = enemy.GetComponent<Person>().Name + "\nHP: " + enemy.GetComponent<Person>().health.ToString();
+        playerHealthText.text = "HP: " + player.GetComponent<Person>().health;
+        battleText.text = "";
     }
     
-    public void Fight()
+    public void Fight(int ability_Number)
     {
-        player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), 1);
-        print("yolo");
-        print("Player Stats: Health: " + player.GetComponent<Person>().health);
-        print("Enemy Stats: Health: " + enemy.GetComponent<Person>().health); 
+        current_Ability_Number = ability_Number;
+        StartCoroutine(Wait());
     }
 
-    public void Defend()
+    public void ExitBattle()
     {
-      
+        battleCamera.active = false;
+        playerCamera.active = true;
+
+        player.GetComponent<Person>().health = 100;
+        player.GetComponent<PlayerMovement>().isAllowedToMove = true;
     }
+
+    IEnumerator Wait()
+    {
+        bool attackHit;
+        bool BattleActive = true;
+        attackHit = player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), current_Ability_Number);
+        battleText.text = "Used Take Notes on " + enemy.GetComponent<Person>().Name;
+        if (!attackHit)
+        {
+            yield return new WaitForSecondsRealtime(.5f);
+            battleText.text += "\nBut it missed...";
+        }
+        else
+        {
+            BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSecondsRealtime(.2f);
+            BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSecondsRealtime(.2f);
+            BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSecondsRealtime(.2f);
+            BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        enemyHealthText.text = enemy.GetComponent<Person>().Name + "\nHP: " + enemy.GetComponent<Person>().health.ToString();
+
+        if (enemy.GetComponent<Person>().health <= 0)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            battleText.text = "VICTORY: Exam Passed!!!";
+            yield return new WaitForSecondsRealtime(2);
+            ExitBattle();
+        }
+        else if(player.GetComponent<Person>().health <= 0)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            battleText.text = "FAILURE: You Have Failed\nGo study and try again later loser";
+            yield return new WaitForSecondsRealtime(2);
+            ExitBattle();
+        }
+
+        if (BattleActive)
+        {
+            yield return new WaitForSecondsRealtime(2);
+            attackHit = enemy.GetComponent<Person>().attack(player.GetComponent<Person>(), 1);
+            battleText.text = enemy.GetComponent<Person>().Name + " used " + enemy.GetComponent<Person>().getAbilityName();
+            if (!attackHit)
+            {
+                yield return new WaitForSecondsRealtime(.5f);
+                battleText.text += "\nBut it missed...";
+            }
+            else
+            {
+                BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
+                yield return new WaitForSecondsRealtime(.2f);
+                BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
+                yield return new WaitForSecondsRealtime(.2f);
+                BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
+                yield return new WaitForSecondsRealtime(.2f);
+                BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            playerHealthText.text = player.GetComponent<Person>().health.ToString();
+        }
+        
+    }
+
     /* Exits the battle by allowing the player to move again and setting the camera to 
      * the correct camera that the player was last at. This camera is taken as the parameter
      * to the method.

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyGaze : MonoBehaviour
 {
+    public GameObject enemy;
 
     private GameManager gm;
 
@@ -23,6 +24,7 @@ public class EnemyGaze : MonoBehaviour
     {
         if (col.GetComponent<PlayerMovement>())
         {
+            gm.GetComponent<GameManager>().enemy = enemy;
             gm.EnterBattle();
         }
     }

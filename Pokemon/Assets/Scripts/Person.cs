@@ -10,6 +10,10 @@ public class Person : MonoBehaviour
     public int dexterity_Bonus;
     public int health;
 
+    public Sprite BattleSprite;
+
+    private Ability current_Ability;
+
     //This array holds the person's four abilities.
 
     //Constructor
@@ -22,22 +26,34 @@ public class Person : MonoBehaviour
         this.health = health;
     } */
 
-    public void attack(Person opponent, int ability_Index)
+    public bool attack(Person opponent, int ability_Index)
     {
-        if ((int)Random.Range(0, 100) + dexterity_Bonus > GetComponent<Ability>().chance_to_miss)
+        bool attackHit = false;
+        switch (ability_Index)
         {
-            /*
-            opponent.health -= abilities[ability_Index].attack_Damage;
-            text = name + " used " + abilities[ability_Index].name + " on " + opponent.name + ":  " + "Attack Succesful!";
-            */
+            case 1:
+                current_Ability = GetComponent<Ability>();
+                break;
+            default:
+                print("Error: No ability found");
+                break;
+        }
+        if ((int)Random.Range(0, 100) + dexterity_Bonus > current_Ability.chance_to_miss)
+        {
             opponent.health -= GetComponent<Ability>().attack_Damage;
-            print( Name + " used " + GetComponent<Ability>().Name + " on " + opponent.Name + ":  " + "Attack Succesful!");
+            attackHit = true;
         }
         else
         {
            // text = name + " used " + abilities[ability_Index].name + " on " + opponent.name + ":  " + "Attack missed.....";
             print(Name + " used " + GetComponent<Ability>().Name + " on " + opponent.Name + ":  " + "Attack missed.....");
         }
+        return attackHit;
+    }
+
+    public string getAbilityName()
+    {
+        return current_Ability.Name;
     }
 
 
