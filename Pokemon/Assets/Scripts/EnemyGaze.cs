@@ -26,6 +26,7 @@ public class EnemyGaze : MonoBehaviour
         {
             gm.GetComponent<GameManager>().enemy = enemy;
             gm.EnterBattle();
+            Destroy(gameObject);
         }
     }
 }
