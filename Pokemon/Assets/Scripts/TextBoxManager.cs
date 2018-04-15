@@ -59,7 +59,7 @@ public class TextBoxManager : MonoBehaviour {
         {
             if (i < textLines[currentLine].Length)
             {
-                yield return new WaitForSecondsRealtime(.05f);
+                yield return new WaitForSecondsRealtime(.03f);
                 theText.text += textLines[currentLine][i].ToString();
                 if (textLines[currentLine][i] == '\n')
                 {
@@ -74,7 +74,7 @@ public class TextBoxManager : MonoBehaviour {
         {
             if (i < textLines[currentLine].Length)
             {
-                yield return new WaitForSecondsRealtime(.05f);
+                yield return new WaitForSecondsRealtime(.03f);
                 theText.text += textLines[currentLine][i].ToString();
                 if (textLines[currentLine][i] == '\n')
                 {
@@ -84,7 +84,7 @@ public class TextBoxManager : MonoBehaviour {
         }
         currentLine++;
 
-        yield return new WaitForSecondsRealtime(.05f);
+        yield return new WaitForSecondsRealtime(.03f);
         printingText = false;
     }
 

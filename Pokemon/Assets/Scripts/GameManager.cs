@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
         bool attackHit;
         bool BattleActive = true;
         attackHit = player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), current_Ability_Number);
-        battleText.text = "You used" + player.GetComponent<Person>().getAbilityName() + " on " + enemy.GetComponent<Person>().Name;
+        battleText.text = "You used " + player.GetComponent<Person>().getAbilityName() + " on " + enemy.GetComponent<Person>().Name;
         if (!attackHit)
         {
             yield return new WaitForSecondsRealtime(.5f);
@@ -179,13 +179,13 @@ public class GameManager : MonoBehaviour
             battleText.text = "VICTORY: Exam Passed!!!";
             yield return new WaitForSecondsRealtime(1);
             battleText.text = "Health increased by 25 HP!";
-            yield return new WaitForSecondsRealtime(.25f);
+            yield return new WaitForSecondsRealtime(.75f);
             battleText.text += "Inteligence Increased by 25!";
-            yield return new WaitForSecondsRealtime(.25f);
+            yield return new WaitForSecondsRealtime(.75f);
             battleText.text += "Knowledge Increased by 1!";
-            yield return new WaitForSecondsRealtime(.5f);
+            yield return new WaitForSecondsRealtime(.75f);
             battleText.text = "Gained 3 Credits";
-            yield return new WaitForSecondsRealtime(.5f);
+            yield return new WaitForSecondsRealtime(.75f);
             player.GetComponent<Person>().health += 25;
             player.GetComponent<Person>().attack_Bonus += 5;
             player.GetComponent<Person>().dexterity_Bonus += 1;
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSecondsRealtime(.2f);
                 BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
             }
-            playerHealthText.text = player.GetComponent<Person>().health.ToString();
+            playerHealthText.text = "HP: " + player.GetComponent<Person>().health.ToString();
         }
         
     }
