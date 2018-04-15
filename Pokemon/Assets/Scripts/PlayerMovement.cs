@@ -9,6 +9,7 @@ using UnityEngine;
  * */
 public class PlayerMovement : MonoBehaviour
 {
+    Animator Anim;
 
     //Enum: Keeps track of what direction you last moved to determine what sprite to use
     Direction currentDir;
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         canMoveEast = true;
         canMoveSouth = true;
         canMoveWest = true;
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -142,6 +144,25 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             isAllowedToMove = true;
+            /*if (isMoving == true && isAllowedToMove == true)
+            {
+                if (canMoveNorth == true)
+                {
+                    Anim.Play("NorthWalk");
+                }
+                else if (canMoveEast == true)
+                {
+                    Anim.Play("EastWalk");
+                }
+                else if (canMoveSouth == true)
+                {
+                    Anim.Play("SouthWalk");
+                }
+                else if (canMoveWest == true)
+                {
+                    Anim.Play("WestWalk");
+                }
+            }*/
         }
     }
 
@@ -150,10 +171,11 @@ public class PlayerMovement : MonoBehaviour
         isMoving = true; //Signalling that the player is moving
         startPos = entity.position; //Putting variable startPos to be the players current position
         t = 0; //Reseting time to 0
-
+        
         endPos = new Vector3(startPos.x + System.Math.Sign(input.x), startPos.y + System.Math.Sign(input.y), startPos.z);
+        
 
-        while (t < 1f)
+            while (t < 1f)
         {
             t += Time.deltaTime * walkSpeed;
             entity.position = Vector3.Lerp(startPos, endPos, t);
