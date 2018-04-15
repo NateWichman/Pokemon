@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 65614421530f04c49a20fe9524f034e1
-timeCreated: 1523815090
+timeCreated: 1523825963
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -140,6 +140,7 @@ TextureImporter:
     21300266: Char_133
     21300268: Char_134
     21300270: Char_135
+    21300272: WalkAnimSheet
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -233,7 +234,7 @@ TextureImporter:
       name: North_2
       rect:
         serializedVersion: 2
-        x: 38
+        x: 39
         y: 244
         width: 17
         height: 27
@@ -1493,7 +1494,7 @@ TextureImporter:
       name: Char_91
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 117
         width: 32
         height: 32
@@ -2113,6 +2114,20 @@ TextureImporter:
         y: 21
         width: 32
         height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WalkAnimSheet
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 149
+        width: 88
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
