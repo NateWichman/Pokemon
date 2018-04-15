@@ -5,7 +5,7 @@ using UnityEngine;
 public class SolidObject : MonoBehaviour
 {
 
-    private GameManager gm;
+    public GameManager gm;
     // Use this for initialization
     void Start()
     {

@@ -6,7 +6,7 @@ public class EnemyGaze : MonoBehaviour
 {
     public GameObject enemy;
 
-    private GameManager gm;
+    public GameManager gm;
 
     // Use this for initialization
     void Start()

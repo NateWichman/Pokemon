@@ -14,7 +14,7 @@ public class Person : MonoBehaviour
 
     public Sprite BattleSprite;
 
-    private Ability current_Ability;
+    public Ability current_Ability;
 
     //This array holds the person's four abilities.
 
