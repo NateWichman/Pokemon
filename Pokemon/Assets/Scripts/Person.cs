@@ -9,6 +9,8 @@ public class Person : MonoBehaviour
     public int attack_Bonus;
     public int dexterity_Bonus;
     public int health;
+    public bool defeated = false;
+    public int credits = 0;
 
     public Sprite BattleSprite;
 

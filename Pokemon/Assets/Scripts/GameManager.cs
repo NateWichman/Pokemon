@@ -78,6 +78,11 @@ public class GameManager : MonoBehaviour
         offsetW = westOfPlayer.transform.position - player.transform.position;
         //Setting the offset of Camera1 to the correct postition
         offsetCamera1 = playerCamera.transform.position - player.transform.position;
+
+        if(player.GetComponent<Person>().credits == 120)
+        {
+            //Victory Achieved
+        }
         
     }
 
@@ -106,18 +111,6 @@ public class GameManager : MonoBehaviour
     {
         if (titleDone == true && introDone == false)
         {
-            /*
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-               spaceCounter++;
-            }
-            if (spaceCounter == endingIntroLine)
-            {
-                introDone = true;
-                introCamera.SetActive(false);
-                playerCamera.SetActive(true);
-                player.GetComponent<PlayerMovement>().isAllowedToMove = true;
-            } */
             if (introTextReader.GetComponent<TextBoxManager>().fileDoneReading)
             {
                 introDone = true;
@@ -162,7 +155,7 @@ public class GameManager : MonoBehaviour
         bool attackHit;
         bool BattleActive = true;
         attackHit = player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), current_Ability_Number);
-        battleText.text = "Used Take Notes on " + enemy.GetComponent<Person>().Name;
+        battleText.text = "You used" + player.GetComponent<Person>().getAbilityName() + " on " + enemy.GetComponent<Person>().Name;
         if (!attackHit)
         {
             yield return new WaitForSecondsRealtime(.5f);
@@ -184,7 +177,20 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(1);
             battleText.text = "VICTORY: Exam Passed!!!";
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(1);
+            battleText.text = "Health increased by 25 HP!";
+            yield return new WaitForSecondsRealtime(.25f);
+            battleText.text += "Inteligence Increased by 25!";
+            yield return new WaitForSecondsRealtime(.25f);
+            battleText.text += "Knowledge Increased by 1!";
+            yield return new WaitForSecondsRealtime(.5f);
+            battleText.text = "Gained 3 Credits";
+            yield return new WaitForSecondsRealtime(.5f);
+            player.GetComponent<Person>().health += 25;
+            player.GetComponent<Person>().attack_Bonus += 5;
+            player.GetComponent<Person>().dexterity_Bonus += 1;
+            enemy.GetComponent<Person>().defeated = true;
+            player.GetComponent<Person>().credits += 3;
             ExitBattle();
         }
         else if(player.GetComponent<Person>().health <= 0)

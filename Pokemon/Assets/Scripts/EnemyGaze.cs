@@ -17,7 +17,10 @@ public class EnemyGaze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (enemy.GetComponent<Person>().defeated)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -26,7 +29,6 @@ public class EnemyGaze : MonoBehaviour
         {
             gm.GetComponent<GameManager>().enemy = enemy;
             gm.EnterBattle();
-            Destroy(gameObject);
         }
     }
 }
