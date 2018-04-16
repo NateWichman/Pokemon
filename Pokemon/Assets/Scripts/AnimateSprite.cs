@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimateSprite : MonoBehaviour {
+/// <summary>
+/// This class handles sprite animation 
+/// </summary>
+public class AnimateSprite : MonoBehaviour
+{
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
+    {
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
+    {
+    }
 }

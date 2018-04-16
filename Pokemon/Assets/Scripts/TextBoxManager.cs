@@ -5,23 +5,60 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// This class controls how text is displayed on the screen 
+/// </summary>
 public class TextBoxManager : MonoBehaviour {
 
+    /// <summary>
+    /// The text box
+    /// </summary>
     public GameObject textBox;
+
+    /// <summary>
+    /// The text
+    /// </summary>
     public Text theText;
+
+    /// <summary>
+    /// The text file
+    /// </summary>
     public TextAsset textFile;
+
+    /// <summary>
+    /// The text lines
+    /// </summary>
     public string[] textLines;
+
+    /// <summary>
+    /// The current line
+    /// </summary>
     public int currentLine = 0;
+
+    /// <summary>
+    /// The end at line
+    /// </summary>
     public int endAtLine;
+
+    /// <summary>
+    /// The printing text
+    /// </summary>
     public bool printingText = false;
+
+    /// <summary>
+    /// The temporary string
+    /// </summary>
     public char[] tempString;
 
+    /// <summary>
+    /// The file done reading
+    /// </summary>
     public bool fileDoneReading = false;
 
-    //add player object and disable movement.
-    // Use this for initialization
-
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
         if (textFile != null)
         {
@@ -30,27 +67,34 @@ public class TextBoxManager : MonoBehaviour {
         endAtLine = textLines.Length;
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
-        //needs to be modifying for NPC interaction
         if (Input.GetKeyDown(KeyCode.Space) && !printingText)
         {
             if (currentLine >= endAtLine)
             {
                 fileDoneReading = true;
             }
+
             else
             {
                 StartCoroutine(Wait());
             }
         }
+
         if(Input.GetKeyDown(KeyCode.Escape) && !fileDoneReading)
         {
             fileDoneReading = true;
         }
-
     }
+
+    /// <summary>
+    /// Waits this instance.
+    /// </summary>
+    /// <returns name="WaitForSecondsRealTime">How long to wait between letter displays</returns>
     IEnumerator Wait()
     {
         printingText = true;
@@ -67,6 +111,7 @@ public class TextBoxManager : MonoBehaviour {
                 }
             }
         }
+
         theText.text += "\n";
         currentLine++;
         theText.text += textLines[currentLine][0].ToString();
@@ -82,10 +127,9 @@ public class TextBoxManager : MonoBehaviour {
                 }
             }
         }
-        currentLine++;
 
+        currentLine++;
         yield return new WaitForSecondsRealtime(.03f);
         printingText = false;
     }
-
 }

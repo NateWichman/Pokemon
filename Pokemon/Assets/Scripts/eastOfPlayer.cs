@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the invisible sprite to the east of the player. 
+/// It is used for collision handling. 
+/// </summary>
 public class eastOfPlayer : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
-
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
-
     }
 }

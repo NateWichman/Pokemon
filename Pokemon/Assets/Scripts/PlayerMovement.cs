@@ -2,56 +2,104 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * 	This Class controls the player movement with the arrowkeys.
- * It also interacts with the SolidObject class through the GameManager class
- * to control whether the player can move through certian objects
- * */
+/// <summary>
+/// This Class controls the player movement with the arrow keys.
+/// It also interacts with the SolidObject class through the GameManager class
+/// to control whether the player can move through certain objects
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
-    Animator Anim;
+    /// <summary>
+    /// The animimation
+    /// </summary>
+    public Animator Anim;
 
-    //Enum: Keeps track of what direction you last moved to determine what sprite to use
-    Direction currentDir;
+    /// <summary>
+    /// Enum: Keeps track of what direction you last moved to determine what sprite to use
+    /// </summary>
+    public Direction currentDir;
 
-    //Holds the information of what arrow key is being pressed
-    Vector2 input;
+    /// <summary>
+    /// Holds the information of what arrow key is being pressed
+    /// </summary>
+    public Vector2 input;
 
-    //Holds whether the player is currently moving
-    bool isMoving = false;
+    /// <summary>
+    /// Holds whether the player is currently moving
+    /// </summary>
+    public bool isMoving = false;
 
-    //Holds the current postion of the player at any given time
-    Vector3 startPos;
+    /// <summary>
+    /// Holds the current spot of the player at any given time
+    /// </summary>
+    public Vector3 startPos;
 
-    //Holds a position in the direction the player wants to move
-    Vector3 endPos;
+    /// <summary>
+    /// Holds a position in the direction the player wants to move
+    /// </summary>
+    public Vector3 endPos;
 
-    //Float used for keeping track of time
-    float t;
+    /// <summary>
+    /// Float used for keeping track of time
+    /// </summary>
+    public float t;
 
-    //Below public variables for the sprites,
-    //They will be changed every time the player changes direction
+    /// <summary>
+    /// The north sprite
+    /// </summary>
     public Sprite northSprite;
+
+    /// <summary>
+    /// The east sprite
+    /// </summary>
     public Sprite eastSprite;
+
+    /// <summary>
+    /// The south sprite
+    /// </summary>
     public Sprite southSprite;
+
+    /// <summary>
+    /// The west sprite
+    /// </summary>
     public Sprite westSprite;
 
-    //Public float keeping track of a multiplier for speed. 
-    //This way we can tweak how fast the player walks outside of the script
+    /// <summary>
+    /// Public float keeping track of a multiplier for speed. 
+    /// This way we can tweak how fast the player walks outside of the script
+    /// </summary>
     public float walkSpeed = 3f;
 
-    //Controls whether the player can move at all
+    /// <summary>
+    /// Controls whether the player can move at all
+    /// </summary>
     public bool isAllowedToMove = true;
 
-    //Variables to control in what direction the player can move
+    /// <summary>
+    /// Variables to control in what direction the player can move
+    /// </summary>
     public bool canMoveNorth = true;
+
+    /// <summary>
+    /// The can move east
+    /// </summary>
     public bool canMoveEast = true;
+
+    /// <summary>
+    /// The can move south
+    /// </summary>
     public bool canMoveSouth = true;
+
+    /// <summary>
+    /// The can move west
+    /// </summary>
     public bool canMoveWest = true;
 
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
-        //Instantiating instance variables
         isAllowedToMove = true;
         canMoveNorth = true;
         canMoveEast = true;
@@ -60,24 +108,24 @@ public class PlayerMovement : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
         if (!isMoving && isAllowedToMove)
         {
-            //Input now equals the values from the arrowkeys
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
             if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
             {
-                input.y = 0; //Makes it so the player does not move diagnoally
+                input.y = 0; 
             }
             else
             {
                 input.x = 0;
             }
 
-            //The below if statement determins the correct enum to change the sprite
             if (input != Vector2.zero)
             {
                 if (input.x < 0)
@@ -97,7 +145,6 @@ public class PlayerMovement : MonoBehaviour
                     currentDir = Direction.North;
                 }
 
-                //Changes sprite based on currentDir value found above
                 switch (currentDir)
                 {
                     case Direction.North:
@@ -114,8 +161,6 @@ public class PlayerMovement : MonoBehaviour
                         break;
                 }
 
-
-                //freezing abilitiy to move if the player is not allowed it move in their intended direction
                 if ((input.y > 0) && (!canMoveNorth))
                 {
                     isAllowedToMove = false;
@@ -139,43 +184,27 @@ public class PlayerMovement : MonoBehaviour
 
                 if (!isMoving && isAllowedToMove)
                 {
-
                     StartCoroutine(Move(transform));
                 }
             }
+
             isAllowedToMove = true;
-            /*if (isMoving == true && isAllowedToMove == true)
-            {
-                if (canMoveNorth == true)
-                {
-                    Anim.Play("NorthWalk");
-                }
-                else if (canMoveEast == true)
-                {
-                    Anim.Play("EastWalk");
-                }
-                else if (canMoveSouth == true)
-                {
-                    Anim.Play("SouthWalk");
-                }
-                else if (canMoveWest == true)
-                {
-                    Anim.Play("WestWalk");
-                }
-            }*/
         }
     }
 
+    /// <summary>
+    /// Moves the specified entity.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns name="">Returns a </returns>
     public IEnumerator Move(Transform entity)
     {
-        isMoving = true; //Signalling that the player is moving
-        startPos = entity.position; //Putting variable startPos to be the players current position
-        t = 0; //Reseting time to 0
+        isMoving = true;
+        startPos = entity.position;
+        t = 0;
         
         endPos = new Vector3(startPos.x + System.Math.Sign(input.x), startPos.y + System.Math.Sign(input.y), startPos.z);
-        
-
-            while (t < 1f)
+        while (t < 1f)
         {
             t += Time.deltaTime * walkSpeed;
             entity.position = Vector3.Lerp(startPos, endPos, t);

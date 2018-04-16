@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the player 
+/// </summary>
 public class Player : MonoBehaviour
 {
-
-    //This list is of the object type of the BasePokemon class
-    //it will allow us to keep track of what pokemon the user owns
-
-    // Use this for initialization
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
-
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
-
     }
 }

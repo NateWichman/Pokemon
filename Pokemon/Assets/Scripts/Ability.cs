@@ -2,31 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls 
+/// </summary>
 public class Ability : MonoBehaviour
 {
-
+    /// <summary>
+    /// The name
+    /// </summary>
     public string Name;
+
+    /// <summary>
+    /// The attack damage
+    /// </summary>
     public int attack_Damage;
+
+    /// <summary>
+    /// The chance to miss
+    /// </summary>
     public int chance_to_miss;
-    // Use this for initialization
 
-    //Constructor
-    /*
-    public Ability(string name, int attack_Damage, int chance_to_miss)
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
-        this.name = name;
-        this.attack_Damage = attack_Damage;
-        this.chance_to_miss = chance_to_miss;
-    } */
-
-    void Start()
-    {
-
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
-
     }
 }

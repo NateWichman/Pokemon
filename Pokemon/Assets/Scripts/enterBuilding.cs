@@ -2,29 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the player moving in and out of buildings 
+/// </summary>
 public class enterBuilding : MonoBehaviour
 {
+    /// <summary>
+    /// The exit point
+    /// </summary>
     public GameObject exitPoint;
+
+    /// <summary>
+    /// The player
+    /// </summary>
     public GameObject player;
+
+    /// <summary>
+    /// The north
+    /// </summary>
     public GameObject North;
+
+    /// <summary>
+    /// The east
+    /// </summary>
     public GameObject East;
+
+    /// <summary>
+    /// The south
+    /// </summary>
     public GameObject South;
+
+    /// <summary>
+    /// The west
+    /// </summary>
     public GameObject West;
 
-   // private GameManager gm;
-    // Use this for initialization
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
-    //    gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
-
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    /// <summary>
+    /// Called when [trigger stay2 d].
+    /// </summary>
+    /// <param name="col">The col.</param>
+    public void OnTriggerStay2D(Collider2D col)
     {
         if (col.GetComponent<PlayerMovement>())
         {
@@ -37,8 +68,6 @@ public class enterBuilding : MonoBehaviour
             East.transform.position += moveDelta;
             South.transform.position += moveDelta;
             West.transform.position += moveDelta;
-
         }
     }
-
 }

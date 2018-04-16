@@ -4,9 +4,14 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
+/// <summary>
+/// This class holds all the unit test 
+/// </summary>
 public class NewEditModeTest
 {
-
+    /// <summary>
+    /// Tests the person construction.
+    /// </summary>
     [Test]
     public void TestPersonConstruction()
     {
@@ -23,6 +28,9 @@ public class NewEditModeTest
         Assert.AreEqual(100, player.health);
     }
 
+    /// <summary>
+    /// Tests the game manager construction.
+    /// </summary>
     [Test]
     public void TestGameManagerConstruction()
     {
@@ -34,6 +42,9 @@ public class NewEditModeTest
         Assert.IsFalse(gm.introDone);
     }
 
+    /// <summary>
+    /// Tests the solid object left code.
+    /// </summary>
     [Test]
     public void testSolidObjectLeftCode()
     {
@@ -44,6 +55,9 @@ public class NewEditModeTest
         Assert.AreEqual("Nate", player.GetComponent<Person>().Name);
     }
 
+    /// <summary>
+    /// Tests the enemy gaze self destruct.
+    /// </summary>
     [Test]
     public void testEnemyGazeSelfDestruct()
     {
@@ -59,8 +73,6 @@ public class NewEditModeTest
 
         enemy.GetComponent<Person>().defeated = false;
 
-        //These if statments represent the Update() method of EnemyGaze
-        //It could not be used because it is protected.
         if (enemy.GetComponent<Person>().defeated)
         {
             gm = null;
@@ -76,9 +88,11 @@ public class NewEditModeTest
         }
 
         Assert.AreEqual(null, gm);
-
     }
 
+    /// <summary>
+    /// Tests the game manager collision detection.
+    /// </summary>
     [Test]
     public void testGameManagerCollisionDetection()
     {
@@ -92,12 +106,12 @@ public class NewEditModeTest
         gaze.GetComponent<EnemyGaze>().enemy = player;
         gaze.GetComponent<EnemyGaze>().gm = gm.GetComponent<GameManager>();
 
-        //Testing Collision code onTriggerEnter2D(Collider2D col)
-        //If they are equal, we know that player movement was sucessfully found which will activate the
-        //enter battle code, which is the purpose of the collision code.
         Assert.AreEqual(null, player.GetComponent<PlayerMovement>());
     }
 
+    /// <summary>
+    /// Tests the attack.
+    /// </summary>
     [Test]
     public void testAttack()
     {
@@ -116,11 +130,13 @@ public class NewEditModeTest
         defender.GetComponent<Person>().health = 100;
         ability.GetComponent<Ability>().Name = "Name";
 
-        //Should Miss no matter what
         attacker.GetComponent<Person>().attack(defender.GetComponent<Person>(), 1);
         Assert.AreEqual(100, defender.GetComponent<Person>().health);
     }
 
+    /// <summary>
+    /// Tests the ability name fetching.
+    /// </summary>
     [Test]
     public void testAbilityNameFetching()
     {
@@ -130,6 +146,9 @@ public class NewEditModeTest
         Assert.AreEqual("Name", ability.GetComponent<Ability>().Name);
     }
 
+    /// <summary>
+    /// Tests the ability attack damage fetching.
+    /// </summary>
     [Test]
     public void testAbilityAttackDamageFetching()
     {
@@ -139,6 +158,9 @@ public class NewEditModeTest
         Assert.AreEqual(5, ability.GetComponent<Ability>().attack_Damage);
     }
 
+    /// <summary>
+    /// Tests the ability chance to miss fetching.
+    /// </summary>
     [Test]
     public void testAbilityChanceToMissFetching()
     {
@@ -147,7 +169,10 @@ public class NewEditModeTest
 
         Assert.AreEqual(5, ability.GetComponent<Ability>().chance_to_miss);
     }
-    
+
+    /// <summary>
+    /// Tests the solid object colilision north.
+    /// </summary>
     [Test]
     public void testSolidObjectColilisionNorth()
     {
@@ -165,6 +190,9 @@ public class NewEditModeTest
         Assert.AreEqual(false, player.GetComponent<PlayerMovement>().canMoveNorth);
     }
 
+    /// <summary>
+    /// Tests the solid object colilision east.
+    /// </summary>
     [Test]
     public void testSolidObjectColilisionEast()
     {
@@ -182,6 +210,9 @@ public class NewEditModeTest
         Assert.AreEqual(false, player.GetComponent<PlayerMovement>().canMoveEast);
     }
 
+    /// <summary>
+    /// Tests the solid object colilision south.
+    /// </summary>
     [Test]
     public void testSolidObjectColilisionSouth()
     {
@@ -199,6 +230,9 @@ public class NewEditModeTest
         Assert.AreEqual(false, player.GetComponent<PlayerMovement>().canMoveSouth);
     }
 
+    /// <summary>
+    /// Tests the solid object colilision west.
+    /// </summary>
     [Test]
     public void testSolidObjectColilisionWest()
     {
@@ -216,6 +250,9 @@ public class NewEditModeTest
         Assert.AreEqual(false, player.GetComponent<PlayerMovement>().canMoveWest);
     }
 
+    /// <summary>
+    /// Tests the solid object left.
+    /// </summary>
     [Test]
     public void testSolidObjectLeft()
     {
@@ -239,6 +276,9 @@ public class NewEditModeTest
         Assert.AreEqual(true, player.GetComponent<PlayerMovement>().canMoveSouth);
     }
 
+    /// <summary>
+    /// Tests the text box manager instantiation.
+    /// </summary>
     [Test]
     public void TestTextBoxManagerInstantiation()
     {
@@ -249,5 +289,4 @@ public class NewEditModeTest
         Assert.AreEqual(false, box.GetComponent<TextBoxManager>().printingText);
         Assert.AreEqual(0, box.GetComponent<TextBoxManager>().currentLine);
     }
-
 }

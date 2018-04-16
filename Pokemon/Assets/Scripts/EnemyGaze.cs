@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the "enemy gaze" which triggers a battle 
+/// </summary>
 public class EnemyGaze : MonoBehaviour
 {
+    /// <summary>
+    /// The enemy
+    /// </summary>
     public GameObject enemy;
 
+    /// <summary>
+    /// The gm
+    /// </summary>
     public GameManager gm;
 
-    // Use this for initialization
-    void Start()
+    /// <summary>
+    /// Starts this instance.
+    /// </summary>
+    public void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
+    public void Update()
     {
         if (enemy.GetComponent<Person>().defeated)
         {
@@ -23,7 +36,11 @@ public class EnemyGaze : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    /// <summary>
+    /// Called when [trigger enter2 d].
+    /// </summary>
+    /// <param name="col">The col.</param>
+    public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.GetComponent<PlayerMovement>())
         {
