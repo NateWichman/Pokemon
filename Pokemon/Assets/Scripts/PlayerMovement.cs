@@ -10,7 +10,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     /// <summary>
-    /// The animimation
+    /// The animation 
     /// </summary>
     public Animator Anim;
 

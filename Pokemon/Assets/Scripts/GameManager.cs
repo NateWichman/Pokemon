@@ -9,6 +9,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     /// <summary>
+    /// The enemy
+    /// </summary>
+    public GameObject enemy;
+
+    /// <summary>
     /// The player camera
     /// </summary>
     public GameObject playerCamera;
@@ -79,39 +84,9 @@ public class GameManager : MonoBehaviour
     public bool introDone = false;
 
     /// <summary>
-    /// The offset n
-    /// </summary>
-    private Vector3 offsetN;
-
-    /// <summary>
-    /// The offset e
-    /// </summary>
-    private Vector3 offsetE;
-
-    /// <summary>
-    /// The offset s
-    /// </summary>
-    private Vector3 offsetS;
-
-    /// <summary>
-    /// The offset w
-    /// </summary>
-    private Vector3 offsetW;
-
-    /// <summary>
     /// The intro text reader
     /// </summary>
     public GameObject introTextReader;
-
-    /// <summary>
-    /// The offset camera1
-    /// </summary>
-    private Vector3 offsetCamera1;
-
-    /// <summary>
-    /// The enemy
-    /// </summary>
-    public GameObject enemy;
 
     /// <summary>
     /// The battle text
@@ -151,7 +126,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// The current ability number
     /// </summary>
-    int current_Ability_Number;
+    public int current_Ability_Number;
 
     /// <summary>
     /// The battle enemy sprite
@@ -162,6 +137,31 @@ public class GameManager : MonoBehaviour
     /// The battle player sprite
     /// </summary>
     public GameObject BattlePlayerSprite;
+
+    /// <summary>
+    /// The offset n
+    /// </summary>
+    private Vector3 offsetN;
+
+    /// <summary>
+    /// The offset e
+    /// </summary>
+    private Vector3 offsetE;
+
+    /// <summary>
+    /// The offset s
+    /// </summary>
+    private Vector3 offsetS;
+
+    /// <summary>
+    /// The offset w
+    /// </summary>
+    private Vector3 offsetW;
+
+    /// <summary>
+    /// The offset camera1
+    /// </summary>
+    private Vector3 offsetCamera1;
 
     /// <summary>
     /// Starts this instance.
@@ -185,6 +185,7 @@ public class GameManager : MonoBehaviour
         {
             SwitchToIntro();
         }
+
         if (!introDone)
         {
             SwitchToPlayer();
@@ -196,13 +197,13 @@ public class GameManager : MonoBehaviour
         offsetW = westOfPlayer.transform.position - player.transform.position;
         offsetCamera1 = playerCamera.transform.position - player.transform.position;
 
-        if(player.GetComponent<Person>().credits == 120)
+        if (player.GetComponent<Person>().credits == 120)
         {
         } 
     }
 
     /// <summary>
-    /// Lates the update.
+    /// delays the update.
     /// </summary>
     public void LateUpdate()
     {
@@ -286,8 +287,8 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Waits this instance.
     /// </summary>
-    /// <returnsname = " "> Returns a</returns>
-    IEnumerator Wait()
+    /// <returns name="BattleActive"> Returns if a battle is happening</returns>
+    public IEnumerator Wait()
     {
         bool attackHit;
         bool BattleActive = true;
@@ -299,7 +300,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(.5f);
             battleText.text += "\nBut it missed...";
         }
-
         else
         {
             BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = false;
@@ -333,8 +333,7 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Person>().credits += 3;
             ExitBattle();
         }
-
-        else if(player.GetComponent<Person>().health <= 0)
+        else if (player.GetComponent<Person>().health <= 0)
         {
             yield return new WaitForSecondsRealtime(1);
             battleText.text = "FAILURE: You Have Failed\nGo study and try again later loser";
@@ -353,7 +352,6 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSecondsRealtime(.5f);
                 battleText.text += "\nBut it missed...";
             }
-
             else
             {
                 BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
@@ -367,10 +365,8 @@ public class GameManager : MonoBehaviour
 
             playerHealthText.text = "HP: " + player.GetComponent<Person>().health.ToString();
         }
-
     }
 
-    
     /// <summary>
     /// Exits the battle by allowing the player to move again and setting the camera to 
     /// the correct camera that the player was last at.This camera is taken as the parameter

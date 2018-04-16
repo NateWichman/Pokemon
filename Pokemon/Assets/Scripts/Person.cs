@@ -71,7 +71,6 @@ public class Person : MonoBehaviour
             opponent.health -= GetComponent<Ability>().attack_Damage;
             attackHit = true;
         }
-
         else
         {
            // text = name + " used " + abilities[ability_Index].name + " on " + opponent.name + ":  " + "Attack missed.....";

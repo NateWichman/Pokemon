@@ -1,15 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 /// <summary>
 /// This class controls how text is displayed on the screen 
 /// </summary>
-public class TextBoxManager : MonoBehaviour {
-
+public class TextBoxManager : MonoBehaviour
+{
     /// <summary>
     /// The text box
     /// </summary>
@@ -62,8 +62,9 @@ public class TextBoxManager : MonoBehaviour {
     {
         if (textFile != null)
         {
-            textLines = (textFile.text.Split('\n'));
+            textLines = textFile.text.Split('\n');
         }
+
         endAtLine = textLines.Length;
     }
 
@@ -78,14 +79,13 @@ public class TextBoxManager : MonoBehaviour {
             {
                 fileDoneReading = true;
             }
-
             else
             {
                 StartCoroutine(Wait());
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !fileDoneReading)
+        if (Input.GetKeyDown(KeyCode.Escape) && !fileDoneReading)
         {
             fileDoneReading = true;
         }
@@ -95,7 +95,7 @@ public class TextBoxManager : MonoBehaviour {
     /// Waits this instance.
     /// </summary>
     /// <returns name="WaitForSecondsRealTime">How long to wait between letter displays</returns>
-    IEnumerator Wait()
+    public IEnumerator Wait()
     {
         printingText = true;
         theText.text = textLines[currentLine][0].ToString();

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using UnityEditor;
-using UnityEngine.TestTools;
+﻿using System.Collections;
 using NUnit.Framework;
-using System.Collections;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.TestTools;
 
 /// <summary>
 /// This class holds all the unit test 
@@ -171,7 +171,7 @@ public class NewEditModeTest
     }
 
     /// <summary>
-    /// Tests the solid object colilision north.
+    /// Tests the solid object collision north.
     /// </summary>
     [Test]
     public void testSolidObjectColilisionNorth()
@@ -191,7 +191,7 @@ public class NewEditModeTest
     }
 
     /// <summary>
-    /// Tests the solid object colilision east.
+    /// Tests the solid object collision east.
     /// </summary>
     [Test]
     public void testSolidObjectColilisionEast()
@@ -211,7 +211,7 @@ public class NewEditModeTest
     }
 
     /// <summary>
-    /// Tests the solid object colilision south.
+    /// Tests the solid object collision south.
     /// </summary>
     [Test]
     public void testSolidObjectColilisionSouth()
@@ -231,7 +231,7 @@ public class NewEditModeTest
     }
 
     /// <summary>
-    /// Tests the solid object colilision west.
+    /// Tests the solid object collision west.
     /// </summary>
     [Test]
     public void testSolidObjectColilisionWest()
