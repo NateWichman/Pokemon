@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
     public GameObject battleCamera;
 
     /// <summary>
-    /// The library camera1
+    /// The end camera
     /// </summary>
-    public GameObject libraryCamera1;
+    public GameObject endCamera;
 
     /// <summary>
     /// The title camera
@@ -162,18 +162,27 @@ public class GameManager : MonoBehaviour
     /// The offset camera1
     /// </summary>
     private Vector3 offsetCamera1;
+    private Vector3 offsetCamera2;
+    private Vector3 offsetCamera3;
+
+    public GameObject Menu;
+    public Text MenuText;
+    public bool MenuEnabled = false;
+    private bool attackInProgress = false;
 
     /// <summary>
     /// Starts this instance.
     /// </summary>
     public void Start()
     {
+        endCamera.SetActive(false);
         titleCamera.SetActive(true);
         introCamera.SetActive(false);
         playerCamera.SetActive(false);
         battleCamera.SetActive(false);
-        libraryCamera1.SetActive(false);
         player.GetComponent<PlayerMovement>().isAllowedToMove = false;
+        Menu.GetComponent<SpriteRenderer>().enabled = false;
+        MenuText.GetComponent<Text>().enabled = false;
     }
 
     /// <summary>
@@ -185,21 +194,25 @@ public class GameManager : MonoBehaviour
         {
             SwitchToIntro();
         }
-
         if (!introDone)
         {
             SwitchToPlayer();
         }
-
+        UpdateMenu();
+        OpenMenu();
+        //making invisible sprites that detect collisions follow main player
         offsetN = northOfPlayer.transform.position - player.transform.position;
         offsetE = eastOfPlayer.transform.position - player.transform.position;
         offsetS = southOfPlayer.transform.position - player.transform.position;
         offsetW = westOfPlayer.transform.position - player.transform.position;
+        //Setting the offset of Camera1 to the correct postition
         offsetCamera1 = playerCamera.transform.position - player.transform.position;
-
+        offsetCamera2 = playerCamera.transform.position - Menu.transform.position;
+        offsetCamera3 = playerCamera.transform.position - MenuText.transform.position;
         if (player.GetComponent<Person>().credits == 120)
         {
-        } 
+            SwitchToEndTitle();
+        }
     }
 
     /// <summary>
@@ -211,6 +224,7 @@ public class GameManager : MonoBehaviour
         eastOfPlayer.transform.position = player.transform.position + offsetE;
         southOfPlayer.transform.position = player.transform.position + offsetS;
         westOfPlayer.transform.position = player.transform.position + offsetW;
+        Menu.transform.position = playerCamera.transform.position - offsetCamera2;
         playerCamera.transform.position = player.transform.position + offsetCamera1;
     }
 
@@ -243,7 +257,34 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    void SwitchToEndTitle()
+    {
 
+        playerCamera.SetActive(false);
+        endCamera.SetActive(true);
+    }
+
+    void UpdateMenu()
+    {
+        MenuText.text = "Name: Student\nHP: " + player.GetComponent<Person>().health.ToString() + "\nCredits: " + player.GetComponent<Person>().credits.ToString() +
+            "\nInt: " + player.GetComponent<Person>().attack_Bonus.ToString() + "\nKnowledge: " + player.GetComponent<Person>().dexterity_Bonus.ToString();
+    }
+
+    void OpenMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && MenuEnabled == false)
+        {
+            Menu.GetComponent<SpriteRenderer>().enabled = true;
+            MenuText.GetComponent<Text>().enabled = true;
+            MenuEnabled = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.M) && MenuEnabled == true)
+        {
+            Menu.GetComponent<SpriteRenderer>().enabled = false;
+            MenuText.GetComponent<Text>().enabled = false;
+            MenuEnabled = false;
+        }
+    }
     /// <summary>
     /// Enters the battle.
     /// </summary>
@@ -268,8 +309,11 @@ public class GameManager : MonoBehaviour
     /// <param name="ability_Number">The ability number.</param>
     public void Fight(int ability_Number)
     {
-        current_Ability_Number = ability_Number;
-        StartCoroutine(Wait());
+        if (attackInProgress == false)
+        {
+            current_Ability_Number = ability_Number;
+            StartCoroutine(Wait());
+        }
     }
 
     /// <summary>
@@ -279,8 +323,8 @@ public class GameManager : MonoBehaviour
     {
         battleCamera.active = false;
         playerCamera.active = true;
-
         player.GetComponent<Person>().health = 100;
+        player.GetComponent<Person>().health += 25 * (player.GetComponent<Person>().credits / 3);
         player.GetComponent<PlayerMovement>().isAllowedToMove = true;
     }
 
@@ -290,6 +334,7 @@ public class GameManager : MonoBehaviour
     /// <returns name="BattleActive"> Returns if a battle is happening</returns>
     public IEnumerator Wait()
     {
+        attackInProgress = true;
         bool attackHit;
         bool BattleActive = true;
         attackHit = player.GetComponent<Person>().attack(enemy.GetComponent<Person>(), current_Ability_Number);
@@ -311,22 +356,30 @@ public class GameManager : MonoBehaviour
             BattleEnemySprite.GetComponent<SpriteRenderer>().enabled = true;
         }
 
-        enemyHealthText.text = enemy.GetComponent<Person>().Name + "\nHP: " + enemy.GetComponent<Person>().health.ToString();
+        if (enemy.GetComponent<Person>().health < 0)
+        {
+            enemyHealthText.text = enemy.GetComponent<Person>().Name + "\nHP: 0";
+        }
+        else
+        {
+            enemyHealthText.text = enemy.GetComponent<Person>().Name + "\nHP: " + enemy.GetComponent<Person>().health.ToString();
+        }
 
         if (enemy.GetComponent<Person>().health <= 0)
         {
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(1f);
             battleText.text = "VICTORY: Exam Passed!!!";
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(1f);
             battleText.text = "Health increased by 25 HP!";
-            yield return new WaitForSecondsRealtime(.75f);
-            battleText.text += "Inteligence Increased by 25!";
-            yield return new WaitForSecondsRealtime(.75f);
+            yield return new WaitForSecondsRealtime(1f);
+            battleText.text += "Intelligence Increased by 25!";
+            yield return new WaitForSecondsRealtime(1f);
             battleText.text += "Knowledge Increased by 1!";
-            yield return new WaitForSecondsRealtime(.75f);
+            yield return new WaitForSecondsRealtime(1f);
             battleText.text = "Gained 3 Credits";
-            yield return new WaitForSecondsRealtime(.75f);
-            player.GetComponent<Person>().health += 25;
+            yield return new WaitForSecondsRealtime(1f);
+            player.GetComponent<Person>().health = 100;
+            player.GetComponent<Person>().health += 25 * (player.GetComponent<Person>().credits / 3);
             player.GetComponent<Person>().attack_Bonus += 5;
             player.GetComponent<Person>().dexterity_Bonus += 1;
             enemy.GetComponent<Person>().defeated = true;
@@ -363,8 +416,16 @@ public class GameManager : MonoBehaviour
                 BattlePlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
             }
 
-            playerHealthText.text = "HP: " + player.GetComponent<Person>().health.ToString();
+            if (player.GetComponent<Person>().health < 0)
+            {
+                playerHealthText.text = "HP: 0";
+            }
+            else
+            {
+                playerHealthText.text = "HP: " + player.GetComponent<Person>().health.ToString();
+            }
         }
+        attackInProgress = false;
     }
 
     /// <summary>
