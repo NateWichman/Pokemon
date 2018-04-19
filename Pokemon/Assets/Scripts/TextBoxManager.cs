@@ -6,57 +6,57 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// This class controls how text is displayed on the screen 
+/// This class controls how text is displayed on the screen for the intro.
 /// </summary>
 public class TextBoxManager : MonoBehaviour
 {
     /// <summary>
-    /// The text box
+    /// The text box.
     /// </summary>
     public GameObject textBox;
 
     /// <summary>
-    /// The text
+    /// The text.
     /// </summary>
     public Text theText;
 
     /// <summary>
-    /// The text file
+    /// The text file.
     /// </summary>
     public TextAsset textFile;
 
     /// <summary>
-    /// The text lines
+    /// The text lines. Used for parsing.
     /// </summary>
     public string[] textLines;
 
     /// <summary>
-    /// The current line
+    /// The current line, keeps track of the position in the textLine array we are in.
     /// </summary>
     public int currentLine = 0;
 
     /// <summary>
-    /// The end at line
+    /// The end at line.
     /// </summary>
     public int endAtLine;
 
     /// <summary>
-    /// The printing text
+    /// The printing text. Doesnt allow for skipping lines by spamming space.
     /// </summary>
     public bool printingText = false;
 
     /// <summary>
-    /// The temporary string
+    /// The temporary string, used in parsing.
     /// </summary>
     public char[] tempString;
 
     /// <summary>
-    /// The file done reading
+    /// The file done reading boolean, determines when to switch to the actual game ending the intro.
     /// </summary>
     public bool fileDoneReading = false;
 
     /// <summary>
-    /// Starts this instance.
+    /// Starts this instance. Parses the text file into textLines.
     /// </summary>
     public void Start()
     {
@@ -69,7 +69,8 @@ public class TextBoxManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates this instance.
+    /// Updates this instance. If space is pressed, another single line of TextLines
+    /// is printed slowly to the screen.
     /// </summary>
     public void Update()
     {
@@ -92,7 +93,7 @@ public class TextBoxManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Waits this instance.
+    /// Prints out a line to the screen.
     /// </summary>
     /// <returns name="WaitForSecondsRealTime">How long to wait between letter displays</returns>
     public IEnumerator Wait()

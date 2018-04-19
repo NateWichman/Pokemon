@@ -3,56 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class controls the player moving in and out of buildings 
+/// This class controls the player moving in and out of buildings.
 /// </summary>
 public class enterBuilding : MonoBehaviour
 {
     /// <summary>
-    /// The exit point
+    /// The GameObject to hold the exit point.
     /// </summary>
     public GameObject exitPoint;
 
     /// <summary>
-    /// The player
+    /// The player GameObject.
     /// </summary>
     public GameObject player;
 
     /// <summary>
-    /// The north
+    /// The Invisible sprite north of the player.
     /// </summary>
     public GameObject North;
 
     /// <summary>
-    /// The east
+    /// The invisible sprite east of the player.
     /// </summary>
     public GameObject East;
 
     /// <summary>
-    /// The south
+    /// The invisible sprite south of the player.
     /// </summary>
     public GameObject South;
 
     /// <summary>
-    /// The west
+    /// The invisible sprite west of the player.
     /// </summary>
     public GameObject West;
 
     /// <summary>
-    /// Starts this instance.
+    /// This is not neccecary, but is included in all Unity C# scripts.
     /// </summary>
     public void Start()
     {
     }
 
     /// <summary>
-    /// Updates this instance.
+    /// This is not neccecary, but is included in all Unity C# scripts.
     /// </summary>
     public void Update()
     {
     }
 
     /// <summary>
-    /// Called when [trigger stay2 d].
+    /// Called when an object with the PlayerMovement script attached enters the
+    /// GameObject with this script attached to it. That will then transform the
+    /// position of the player and the invisible sprites to the endPosition. The 
+    /// endPosition is the position of the exit point instance GameObject declared
+    /// earlier.
     /// </summary>
     /// <param name="col">The col.</param>
     public void OnTriggerStay2D(Collider2D col)

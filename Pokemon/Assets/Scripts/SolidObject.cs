@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This enum handles the direction of the player 
+/// This enum handles the direction of the player.
 /// </summary>
 public enum Direction
 {
@@ -29,17 +29,17 @@ public enum Direction
 }
 
 /// <summary>
-/// This class handles object collison 
+/// This class handles object collison.
 /// </summary>
 public class SolidObject : MonoBehaviour
 {
     /// <summary>
-    /// The gm
+    /// The game manager object
     /// </summary>
     public GameManager gm;
 
     /// <summary>
-    /// Starts this instance.
+    /// Starts this instance. Attaches the game manager script to gm.
     /// </summary>
     public void Start()
     {
@@ -47,14 +47,16 @@ public class SolidObject : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates this instance.
+    ///  This is not neccecary, but is included in all Unity C# scripts.
     /// </summary>
     public void Update()
     {
     }
 
     /// <summary>
-    /// Called when [trigger stay2 d].
+    /// Called when any object makes contact with this solid object. 
+    /// Updates tha GameManager and alerts it to restrict movement
+    /// of the player in that enum's direction.
     /// </summary>
     /// <param name="col">The col.</param>
     public void OnTriggerStay2D(Collider2D col)
@@ -86,7 +88,7 @@ public class SolidObject : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when [trigger exit2 d].
+    /// When the player leaves the solid object, all motion is allowed agian.
     /// </summary>
     /// <param name="col">The col.</param>
     public void OnTriggerExit2D(Collider2D col)

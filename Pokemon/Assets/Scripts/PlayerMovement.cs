@@ -109,7 +109,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates this instance.
+    /// Updates this instance. Allows player to move if an arrow key is pressed
+    /// and the particular direction the player wants to move is allowed by the 
+    /// game manager, ie. the player has not hit a solid object in that direction.
+    /// This will only run if the player in general is allowed to move, which will
+    /// be restricted in other scenes.
     /// </summary>
     public void Update()
     {
@@ -193,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves the specified entity.
+    /// Moves the player, commanded by the update method.
     /// </summary>
     /// <param name="entity">The entity.</param>
     /// <returns name="">Returns a </returns>
